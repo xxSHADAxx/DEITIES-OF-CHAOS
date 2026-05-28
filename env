@@ -1,0 +1,3 @@
+DISCORD_WEBHOOK=https://discord.com/api/webhooks/1509394320598499388/hyvKpdsiyxETjCrFlO2L1B5gHzq0CKc8Wx_NU34_XVxpdgrt-wOQE0BZN3Vc5FVhNUq1
+PORT=3000
+NODE_ENV=development
