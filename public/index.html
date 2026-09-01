@@ -291,10 +291,11 @@ footer p{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;color:va
 }
 .nav-socials-dropdown a:last-child { border-bottom: none; }
 .nav-socials-dropdown a:hover { background: rgba(255,215,0,0.08); }
-.nav-socials-dropdown a img { width: 22px; height: 22px; border-radius: 4px; flex-shrink: 0; }
+.nav-socials-dropdown a img { width: 22px; height: 22px; border-radius: 4px; flex-shrink: 0; object-fit: contain; }
 .nav-socials-dropdown .soc-discord { color: #7289DA; }
 .nav-socials-dropdown .soc-tiktok  { color: #ffffff; }
 .nav-socials-dropdown .soc-twitch  { color: #9146FF; }
+.nav-socials-dropdown .soc-youtube { color: #FF0000; }
 
 </style>
 </head>
@@ -316,7 +317,7 @@ footer p{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;color:va
       <button class="lang-btn" id="lang-btn" onclick="toggleLang()">🌐 EN</button>
       <div class="nav-socials" id="nav-socials">
       <div class="nav-socials-btn" onclick="toggleSocials()">
-        🔗 <span id="nav-socials-label">Redes</span> <span class="arrow">▼</span>
+        🌐 <span id="nav-socials-label">Redes</span> <span class="arrow">▼</span>
       </div>
       <div class="nav-socials-dropdown">
         <a href="https://discord.gg/2Zag3K5sCb" target="_blank" class="soc-discord">
@@ -327,6 +328,9 @@ footer p{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;color:va
         </a>
         <a href="https://www.twitch.tv/deitiesofchaos" target="_blank" class="soc-twitch">
           <img src="img/twitchicon.png" alt="Twitch"> Twitch
+        </a>
+        <a href="https://www.youtube.com/@DeitiesOfChaos" target="_blank" class="soc-youtube">
+          <img src="img/youtubeicon.png" alt="YouTube"> YouTube
         </a>
       </div>
     </div>
@@ -496,6 +500,19 @@ footer p{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;color:va
         </div>
         <button class="btn-select-coach btn-solicitar">Solicitar este Coach</button>
       </div>
+    
+      <div class="coach-card" onclick="selectCoach('SoftieX',this)">
+        <div class="coach-img-wrap"><img src="img/SOFTIEX.png" class="coach-char-img" alt="SoftieX"></div>   <!-- PON TU IMAGEN AQUI: img/SOFTIEX.png -->
+        <div class="coach-badge-wrap"><span class="coach-badge peak">Peak ELO 2611</span><span class="coach-badge lang">ENGLISH ONLY</span></div>
+        <div class="coach-name">SoftieX</div>
+        <p class="coach-bio" id="coach-bio-softiex">God of anger, leader of turmoil. Semi-pro, pro slayer. This Brawlhalla player plays with extreme passion and stops at nothing until the job is done. Easy to extreme coaching to help any player progress into the professional scene of Brawlhalla. Specializes with four weapons: Scythe, Lance, Greatsword &amp; Hammer. Playing since 2022 on Xbox. <strong>Recommended for players of all levels.</strong></p>
+        <div class="coach-packages">
+          <div class="pkg-row"><span>Package #1 — 20min coaching</span><span class="pkg-price">$10</span></div>
+          <div class="pkg-row"><span>Package #2 — 25min ranked 1v1 + game review</span><span class="pkg-price">$15</span></div>
+          <div class="pkg-row pkg-row-last"><span>Package #3 — 20min coaching + 20min sparring</span><span class="pkg-price">$15</span></div>
+        </div>
+        <button class="btn-select-coach btn-solicitar">Solicitar este Coach</button>
+      </div>
     </div>
     <div style="max-width:560px;margin:0 auto;">
       <h2 class="section-title" id="reserve-title" style="margin-bottom:24px;">Reserva tu Sesión</h2>
@@ -509,6 +526,7 @@ footer p{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;color:va
             <option value="JKRMartinez">JKRMartinez</option><option value="Osocarr">Osocarr</option>
             <option value="RioBH">RioBH</option><option value="Goldillo/RISA">Goldillo/RISA</option>
             <option value="Miyu Minh">Miyu Minh</option>
+            <option value="SoftieX">SoftieX</option>
           </select></div>
         <div class="form-row"><label id="lbl-pkg">Paquete</label><select id="c-package"><option value="">— Primero selecciona un coach —</option></select></div>
         <div class="form-row"><label id="lbl-char">Tu personaje principal</label><select id="c-char" style="width:100%;background:#0a0a0a;border:1px solid rgba(255,215,0,0.2);color:var(--gold);font-family:'Cinzel',serif;font-size:13px;padding:10px 14px;outline:none;transition:border-color 0.3s;">
@@ -698,7 +716,6 @@ footer p{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;color:va
 <tr class="tbl-row"><td class="td-rank">#10</td><td class="td-name">Miyu Minh</td><td class="td-elo" style="color:#FF4D6D;text-shadow:0 0 8px #FF4D6D55;">2550</td><td class="td-main">Hattori</td></tr>
 <tr class="tbl-row" style="background:rgba(255,215,0,0.04);"><td class="td-rank">#11</td><td class="td-name">Snappo</td><td class="td-elo" style="color:#FF4D6D;text-shadow:0 0 8px #FF4D6D55;">2516</td><td class="td-main">Yumiko</td></tr>
 <tr class="tbl-row"><td class="td-rank">#12</td><td class="td-name">Blahjeremy</td><td class="td-elo" style="color:#FF4D6D;text-shadow:0 0 8px #FF4D6D55;">2510</td><td class="td-main">Orion</td></tr>
-<tr class="tbl-row"><td class="td-rank">#14</td><td class="td-name">Traxin</td><td class="td-elo" style="color:#FF4D6D;text-shadow:0 0 8px #FF4D6D55;">2500</td><td class="td-main">Orion</td></tr>
 <tr class="tbl-row" style="background:rgba(255,215,0,0.04);"><td class="td-rank">#15</td><td class="td-name">Fundita</td><td class="td-elo" style="color:#4DA6FF;text-shadow:0 0 8px #4DA6FF55;">2480</td><td class="td-main">Zariel</td></tr>
 <tr class="tbl-row"><td class="td-rank">#16</td><td class="td-name">Ego</td><td class="td-elo" style="color:#4DA6FF;text-shadow:0 0 8px #4DA6FF55;">2450</td><td class="td-main">Kaya</td></tr>
 <tr class="tbl-row" style="background:rgba(255,215,0,0.04);"><td class="td-rank">#17</td><td class="td-name">TU MA</td><td class="td-elo" style="color:#4DA6FF;text-shadow:0 0 8px #4DA6FF55;">2450</td><td class="td-main">Scarlet</td></tr>
@@ -709,8 +726,9 @@ footer p{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.3em;color:va
 <tr class="tbl-row"><td class="td-rank">#22</td><td class="td-name">LESU</td><td class="td-elo" style="color:#4DA6FF;text-shadow:0 0 8px #4DA6FF55;">2400</td><td class="td-main">Orion</td></tr>
 <tr class="tbl-row" style="background:rgba(255,215,0,0.04);"><td class="td-rank">#23</td><td class="td-name">Doona</td><td class="td-elo" style="color:#4DA6FF;text-shadow:0 0 8px #4DA6FF55;">2400</td><td class="td-main">Mordex</td></tr>
 <tr class="tbl-row"><td class="td-rank">#24</td><td class="td-name">NandoPilinBH</td><td class="td-elo" style="color:#4DA6FF;text-shadow:0 0 8px #4DA6FF55;">2350</td><td class="td-main">Zariel</td></tr>
-<tr class="tbl-row" style="background:rgba(255,215,0,0.04);"><td class="td-rank">#25</td><td class="td-name">Tricza</td><td class="td-elo" style="color:#4DA6FF;text-shadow:0 0 8px #4DA6FF55;">2347</td><td class="td-main">Orion</td></tr>
 <tr class="tbl-row"><td class="td-rank">?</td><td class="td-name">LeiroRD</td><td class="td-elo" style="color:#4DA6FF;text-shadow:0 0 8px #4DA6FF55;">2356</td><td class="td-main">Diana</td></tr>
+<tr class="tbl-row"><td class="td-rank">?</td><td class="td-name">SoftieX</td><td class="td-elo" style="color:#FF4D6D;text-shadow:0 0 8px #FF4D6D55;">2611</td><td class="td-main">Magyar</td></tr>
+<tr class="tbl-row"><td class="td-rank">?</td><td class="td-name">Tricza</td><td class="td-elo" style="color:#4DA6FF;text-shadow:0 0 8px #4DA6FF55;">2347</td><td class="td-main">Orion</td></tr>
 </tbody>
       </table>
     </div>
@@ -938,7 +956,8 @@ var coachPackages={
   'Osocarr':['Package #1 — 1h coaching ($15)','Package #2 — 2h coaching ($25)','Package #3 — 1h coaching + 1h sparring ($20)'],
   'RioBH':['Package #1 — 1h coaching ($15)','Package #2 — 2h coaching ($25)','Package #3 — 1h coaching + 1h sparring ($20)','Package #4 — Sparring 1h ($10)','Package #5 — 5 sesiones 1.5h c/u ($55)','Package #6 — 3 sesiones 1.5h c/u ($40)'],
   'Goldillo/RISA':['Package #1 — 1h coaching ($7.50)','Package #2 — 3h coaching ($21)','Package #3 — 5h coaching + Extension ($35)'],
-  'Miyu Minh':['Package #1 — 30min coaching ($10)','Package #2 — 1h coaching ($20)']
+  'Miyu Minh':['Package #1 — 30min coaching ($10)','Package #2 — 1h coaching ($20)'],
+  'SoftieX':['Package #1 — 20min coaching ($10)','Package #2 — 25min ranked 1v1 + game review ($15)','Package #3 — 20min coaching + 20min sparring ($15)']
 };
 function updatePackages(){
   var coach=(document.getElementById('c-type')||{value:''}).value;
@@ -1032,10 +1051,10 @@ var allMembers=[
   {name:"Alvin",elo:2650,main:"Scarlet"},
   {name:"Osocarr",elo:2622,main:"Artemis"},
   {name:"RISA",elo:2602,main:"Scarlet"},
+  {name:"SoftieX",elo:2611,main:"Magyar"},
   {name:"Miyu Minh",elo:2550,main:"Hattori"},
   {name:"Snappo",elo:2516,main:"Yumiko"},
   {name:"Blahjeremy",elo:2510,main:"Orion"},
-  {name:"Traxin",elo:2500,main:"Orion"},
   {name:"Fundita",elo:2480,main:"Zariel"},
   {name:"Ego",elo:2450,main:"Kaya"},
   {name:"TU MA",elo:2450,main:"Scarlet"},
@@ -1149,6 +1168,8 @@ var translations={es:{
     'coach-bio-riobh':'Dios del martillo y la precisión de los sigs. Especialista en juego agresivo, control del combate con hammer, dominio del offstage y en aprovechar errores del oponente para castigarlos de forma brutal. Ofrece coaching en 1v1 y 2v2 (Peak 2500 en 2v2). Recomendado para jugadores de 1700 en adelante.',
     'coach-bio-bee3rck':'Dios de las botas y guantes. Con un estilo de juego agresivo y enfocado en combate de corta distancia. Su coaching está diseñado para ayudar a los jugadores a mantener presión constante, entrar agresivamente de forma inteligente, mejorar reflejos, optimizar strings y castigos, además de desarrollar un control ofensivo dominante sin perder la disciplina en el neutral game. <strong>Recomendado para jugadores de 1700 en adelante.</strong>',
     'coach-bio-bee3rck':'Dios de las botas y guantes. Con un estilo de juego agresivo y enfocado en combate de corta distancia. Su coaching está diseñado para ayudar a los jugadores a mantener presión constante, entrar agresivamente de forma inteligente, mejorar reflejos, optimizar strings y castigos, además de desarrollar un control ofensivo dominante sin perder la disciplina en el neutral game. <strong>Recomendado para jugadores de 1700 en adelante.</strong>',
+    'coach-bio-softiex':'God of anger, leader of turmoil. Semi-pro, pro slayer. This Brawlhalla player plays with extreme passion and stops at nothing until the job is done. Easy to extreme coaching to help any player progress into the professional scene of Brawlhalla. Specializes with four weapons: Scythe, Lance, Greatsword &amp; Hammer. Playing since 2022 on Xbox. <strong>Recommended for players of all levels.</strong>',
+    'coach-bio-softiex':'God of anger, leader of turmoil. Semi-pro, pro slayer. This Brawlhalla player plays with extreme passion and stops at nothing until the job is done. Easy to extreme coaching to help any player progress into the professional scene of Brawlhalla. Specializes with four weapons: Scythe, Lance, Greatsword &amp; Hammer. Playing since 2022 on Xbox. <strong>Recommended for players of all levels.</strong>',
     'coach-bio-miyuminh':'I am a signature spamming master and unmatched mental game. I have a slow reaction time but I more than make up for it with knowledge and planning. I can use most weapons to 2400 and utilize strategy in character and weapon matchups to overcome personal limitations to take games from players much better than me. A stubborn way to hold on to stocks deep into dark red and black health ensures many chances to pull a win. <strong>Coaching recommended to everyone.</strong>',
     'coach-bio-goldillo':'Maestro del martillo, 8 años de experiencia en Brawlhalla. Especialista en fundamentos y desarrollo del neutral game. Coaching ideal para jugadores que buscan mejorar su jugabilidad desde la base. Recomendado para jugadores desde 1000 a 2400.',
     'reserve-title':'Reserva tu Sesión','lbl-name':'Tu nombre / usuario','lbl-discord':'Usuario de Discord',
@@ -1194,6 +1215,7 @@ var translations={es:{
     'coach-bio-osocar':'Rocket lance specialist, especially with Artemis. Offers coaching focused on weapon usage, sigs and decision-making per situation. Also provides general coaching: opponent reading, damage optimization, neutral, spacing and adaptation at key moments. Recommended for players 2000 to 2400.',
     'coach-bio-riobh':'God of the hammer and sig precision. Specialist in aggressive gameplay, hammer combat control, offstage domination and punishing opponent mistakes brutally. Offers 1v1 and 2v2 coaching (Peak 2500 in 2v2). Recommended for players 1700+.',
     'coach-bio-bee3rck':'God of boots and gauntlets. With an aggressive playstyle focused on close-range combat. His coaching is designed to help players maintain constant pressure, enter aggressively in an intelligent way, improve reflexes, optimize strings and punishes, and develop dominant offensive control without losing neutral game discipline. <strong>Recommended for players 1700+.</strong>',
+    'coach-bio-softiex':'God of anger, leader of turmoil. Semi-pro, pro slayer. This Brawlhalla player plays with extreme passion and stops at nothing until the job is done. Easy to extreme coaching to help any player progress into the professional scene of Brawlhalla. Specializes with four weapons: Scythe, Lance, Greatsword &amp; Hammer. Playing since 2022 on Xbox. <strong>Recommended for players of all levels.</strong>',
     'coach-bio-miyuminh':'I am a signature spamming master and unmatched mental game. I have a slow reaction time but I more than make up for it with knowledge and planning. I can use most weapons to 2400 and utilize strategy in character and weapon matchups to overcome personal limitations to take games from players much better than me. A stubborn way to hold on to stocks deep into dark red and black health ensures many chances to pull a win. <strong>Coaching recommended to everyone.</strong>',
     'coach-bio-goldillo':'Hammer master, 8 years of Brawlhalla experience. Specialist in fundamentals and neutral game development. Ideal coaching for players looking to improve their gameplay from the ground up. Recommended for players 1000 to 2400.',
     'reserve-title':'Book your Session','lbl-name':'Your name / username','lbl-discord':'Discord User',
@@ -1225,7 +1247,7 @@ function applyLang(){
   var ids=['nav-inicio','nav-coaching','nav-socials-label','nav-members','nav-maps','nav-join','lang-btn','clan-oficial','nuestro-clan-title','best-players-txt','leader-title-txt',
     'shada-tag','shada-desc','goldillo-tag','goldillo-desc','drx-tag','drx-desc','nongamer-tag','nongamer-desc',
     'join-badge','join-main-title','join-discord-btn','join-theme-title','join-p1','join-p2','join-p3','join-p4','join-p5','join-p6','join-activities-title','join-li1','join-li2','join-li3','join-li4','join-highlight','join-sponsor-title','join-p7','join-p8',
-    'coaching-title','coaching-sub','coach-bio-darween','coach-bio-mrboy','coach-bio-jkr','coach-bio-osocar','coach-bio-riobh','coach-bio-goldillo','coach-bio-miyuminh',
+    'coaching-title','coaching-sub','coach-bio-darween','coach-bio-mrboy','coach-bio-jkr','coach-bio-osocar','coach-bio-riobh','coach-bio-goldillo','coach-bio-miyuminh','coach-bio-softiex',
     'reserve-title','lbl-name','lbl-discord','lbl-type','lbl-pkg','lbl-char','lbl-elo','lbl-msg','btn-send',
     'maps-title','fondos-title','members-title','members-sub','th-jugador','th-elo-header','opt-select-coach','filter-opt-all','tiktok-msg','opt-select-char','sort-opt-elo-desc','sort-opt-elo-asc','sort-opt-az'];
   ids.forEach(function(id){var el=document.getElementById(id);if(el&&t[id]!==undefined)el.innerHTML=t[id];});
